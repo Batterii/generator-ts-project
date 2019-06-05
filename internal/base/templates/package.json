@@ -1,0 +1,16 @@
+{
+	"name": "@batterii/<%= name %>",
+	"version": "0.0.0",
+	"description": "<%= description %>",
+	"author": "Batterii, LLC",
+	"license": "UNLICENSED",
+	"repository": "github:Batterii/<%= name %>",
+	"files": [],
+	"scripts": {
+		"lint": "eslint . --ext .ts",
+		"lintf": "eslint . --ext .ts --fix",
+		"build": "rm -rf dist && tsc",
+		"preversion": "npm run lint",
+		"prepublishOnly": "git push && git push --tags"
+	}
+}

@@ -1,0 +1,53 @@
+const PackageGenerator = require('../package-generator');
+
+class BasePackageGenerator extends PackageGenerator {
+	constructor(args, opts) {
+		super(args, opts);
+
+		this.option('source-map-support', {
+			description: 'Set to install source-map-support as a dependency',
+			type: Boolean,
+			default: false,
+		});
+	}
+
+	createBasePackage() {
+		// Copy the base package files.
+		this.copyTemplate('package.json');
+		this.copyTemplate('README.md');
+		this.copyTemplate('tsconfig.json');
+
+		// Copy .gitignore file.
+		this.copyTemplate('gitignore', '.gitignore');
+
+		// Copy eslint config files.
+		this.copyTemplate('eslintignore', '.eslintignore');
+		this.copyTemplate('eslintrc.yaml', '.eslintrc.yaml');
+	}
+
+	installDependencies() {
+		// Install typescript. It must be saved exactly to prevent
+		// incompatibilities with typescript-eslint's parser.
+		this.npmInstall('typescript@3.4.5', {
+			'save-dev': true,
+			'save-exact': true,
+		});
+
+		// Install source-map-support as either a dependency or a dev
+		// dependency, depending on the source-map-support option.
+		this.npmInstall('source-map-support@0.5.12', {
+			[this.options['source-map-support'] ? 'save' : 'save-dev']: true,
+		});
+
+		// Install other dev dependencies.
+		this.npmInstall([
+			'@batterii/eslint-config-ts',
+			'@types/node@10',
+			'@typescript-eslint/eslint-plugin@1',
+			'@typescript-eslint/parser@1',
+			'eslint@5',
+		], { 'save-dev': true });
+	}
+}
+
+module.exports = BasePackageGenerator;
