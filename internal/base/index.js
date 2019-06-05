@@ -12,15 +12,15 @@ class BasePackageGenerator extends PackageGenerator {
 	}
 
 	createBasePackage() {
-		// Copy the base package files.
-		this.copyTemplate('package.json');
+		// Copy and rename package.json
+		this.copyTemplate('package-template.json', 'package.json');
+
+		// Copy README and tsconfig.json
 		this.copyTemplate('README.md');
 		this.copyTemplate('tsconfig.json');
 
-		// Copy .gitignore file.
+		// Copy and rename dot files.
 		this.copyTemplate('gitignore', '.gitignore');
-
-		// Copy eslint config files.
 		this.copyTemplate('eslintignore', '.eslintignore');
 		this.copyTemplate('eslintrc.yaml', '.eslintrc.yaml');
 	}

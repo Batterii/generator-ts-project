@@ -8,6 +8,10 @@
 	"author": "Batterii, LLC",
 	"license": "UNLICENSED",
 	"repository": "github:Batterii/generator-ts",
+	"files": [
+		"internal",
+		"base"
+	],
 	"scripts": {
 		"lint": "eslint .",
 		"lintf": "eslint . --fix",
