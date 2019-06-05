@@ -9,8 +9,8 @@
 	"license": "UNLICENSED",
 	"repository": "github:Batterii/generator-ts",
 	"files": [
-		"internal",
-		"base"
+		"generators",
+		"internal"
 	],
 	"scripts": {
 		"lint": "eslint .",
