@@ -1,4 +1,4 @@
-const Generator = require('../generator');
+const { Generator } = require('@batterii/yeoman-helpers');
 
 class LibGenerator extends Generator {
 	constructor(args, opts) {

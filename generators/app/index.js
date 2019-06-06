@@ -1,4 +1,4 @@
-const Generator = require('../../internal/generator');
+const { Generator } = require('@batterii/yeoman-helpers');
 const { omit } = require('lodash');
 
 class ProjectGenerator extends Generator {
@@ -15,7 +15,7 @@ class ProjectGenerator extends Generator {
 				type: 'input',
 				name: 'name',
 				message: (answers) => `Enter the ${answers.type} name.`,
-				default: this.defaultName,
+				default: this.destinationName,
 			},
 			{
 				type: 'input',

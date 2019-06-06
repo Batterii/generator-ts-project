@@ -1,4 +1,4 @@
-const Generator = require('./generator');
+const { Generator } = require('@batterii/yeoman-helpers');
 
 class PackageGenerator extends Generator {
 	constructor(args, opts) {
@@ -7,7 +7,7 @@ class PackageGenerator extends Generator {
 		this.option('name', {
 			description: 'npm package name',
 			type: String,
-			default: this.defaultName,
+			default: this.destinationName,
 		});
 
 		this.option('description', {
