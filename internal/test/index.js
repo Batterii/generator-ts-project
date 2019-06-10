@@ -18,15 +18,13 @@ class TestGenerator extends Generator {
 		// Add test run scripts.
 		this.addScripts({
 			// Scripts for running tests with ts-node.
-			'test': 'mocha test/unit test/integration',
+			'test': 'mocha',
 			'test:unit': 'mocha test/unit',
 			'test:integration': 'mocha test/integration',
 
 			// Script to build and run tests on the output.
 			'test:build': 'npm run build && ' +
-				'mocha --config .mocharc-dist.yaml ' +
-					'dist/test/unit ' +
-					'dist/test/integration',
+				'mocha --config .mocharc-dist.yaml dist/test',
 
 			// Append a test:build run to the preversion script.
 			'preversion': 'npm run test:build',
