@@ -9,10 +9,8 @@ class TestGenerator extends Generator {
 		// Copy test-specific eslint config to the test directory.
 		this.copyTemplate('eslintrc.yaml', 'test/.eslintrc.yaml');
 
-		// Copy the setup file and test examples.
+		// Copy the setup file to the test directory.
 		this.copyTemplate('setup.ts', 'test/setup.ts');
-		this.copyTemplate('unit.ts', 'test/unit/example.ts');
-		this.copyTemplate('integration.ts', 'test/integration/example.ts');
 
 		// Include the test directory for compilation.
 		this.extendTsConfig({ include: [ 'test/**/*' ] });
