@@ -29,10 +29,11 @@ class BinGenerator extends Generator {
 
 		this.addScripts({
 			// Make built bin files executable.
-			build: 'chmod +x dist/bin/*.js',
+			postbuild: 'chmod +x dist/bin/*.js',
 
-			// Add start script for development.
-			start: `npm run build && dist/bin/${command}.js`,
+			// Add start scripts for development.
+			start: `npm run start:${command}`,
+			[`start:${command}`]: `npm run build && dist/bin/${command}.js`
 		});
 	}
 }
