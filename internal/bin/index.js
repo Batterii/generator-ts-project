@@ -13,28 +13,25 @@ class BinGenerator extends Generator {
 	addBin() {
 		const { command } = this.options;
 
-		// Copy the application source file to the bin directory.
-		this.copyTemplate('app.ts', `bin/${command}.ts`);
-
 		// Include the bin directory for compilation.
 		this.extendTsConfig({ include: [ 'bin/**/*' ] });
 
-		this.extendPackage({
-			// Add bin entry to package.json.
-			bin: { [command]: `dist/bin/${command}.js` },
-
-			// Add built bin directory to publishing whitelist.
-			files: [ 'dist/bin' ],
-		});
+		// Add built bin directory to publishing whitelist.
+		this.extendPackage({ files: [ 'dist/bin' ] });
 
 		this.addScripts({
 			// Make built bin files executable.
 			postbuild: 'chmod +x dist/bin/*.js',
 
-			// Add start scripts for development.
+			// Add the main start script.
 			start: `npm run start:${command}`,
-			[`start:${command}`]: `npm run build && dist/bin/${command}.js`
 		});
+
+		// Run the command generator to create the first command.
+		this.composeWith(
+			require.resolve('@batterii/generator-ts-command'),
+			this.options
+		);
 	}
 }
 
