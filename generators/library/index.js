@@ -11,7 +11,7 @@ class LibraryGenerator extends PackageGenerator {
 		// Add the public lib directory.
 		this.composeWith(
 			require.resolve('../../internal/lib'),
-			{ isPublic: true }
+			{ isPublic: true },
 		);
 	}
 }

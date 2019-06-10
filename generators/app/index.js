@@ -36,7 +36,7 @@ class ProjectGenerator extends Generator {
 		// Run the selected subgenerator with the specified options.
 		this.composeWith(
 			require.resolve(`../${this.answers.type}`),
-			omit(this.answers, 'type')
+			omit(this.answers, 'type'),
 		);
 	}
 }

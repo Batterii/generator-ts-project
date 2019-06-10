@@ -18,7 +18,7 @@ class ApplicationGenerator extends PackageGenerator {
 			require.resolve('../../internal/base'),
 			assign(pick(this.options, [ 'name', 'description' ]), {
 				'source-map-support': true,
-			})
+			}),
 		);
 
 		// Add the test suite.
@@ -30,7 +30,7 @@ class ApplicationGenerator extends PackageGenerator {
 		// Add the bin directory.
 		this.composeWith(
 			require.resolve('../../internal/bin'),
-			pick(this.options, 'command')
+			pick(this.options, 'command'),
 		);
 	}
 }

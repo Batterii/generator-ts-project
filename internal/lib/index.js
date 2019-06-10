@@ -17,7 +17,7 @@ class LibGenerator extends Generator {
 		// Create the appropriate lib index file.
 		this.copyTemplate(
 			isPublic ? 'public.ts' : 'internal.ts',
-			'lib/index.ts'
+			'lib/index.ts',
 		);
 
 		// Include the lib directory for compilation.

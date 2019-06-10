@@ -30,7 +30,7 @@ class BinGenerator extends Generator {
 		// Run the command generator to create the first command.
 		this.composeWith(
 			require.resolve('@batterii/generator-ts-command'),
-			this.options
+			this.options,
 		);
 	}
 }
