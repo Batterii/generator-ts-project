@@ -7,7 +7,7 @@
 	],
 	"author": "Batterii, LLC",
 	"license": "UNLICENSED",
-	"repository": "github:Batterii/generator-ts",
+	"repository": "github:Batterii/generator-ts-project",
 	"files": [
 		"generators",
 		"internal"
