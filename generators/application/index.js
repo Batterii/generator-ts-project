@@ -1,14 +1,19 @@
-const PackageGenerator = require('../../internal/package-generator');
 const { assign, pick } = require('lodash');
+const PackageGenerator = require('../../internal/package-generator');
+const { validateCommandName } = require('@batterii/yeoman-validators');
 
 class ApplicationGenerator extends PackageGenerator {
 	constructor(args, opts) {
 		super(args, opts);
 
-		this.option('command', {
-			description: 'Command to run the application',
-			type: String,
-			default: this.options.name,
+		this.optionPrompt({
+			type: 'input',
+			name: 'command',
+			alias: 'c',
+			description: 'Name of a command to create',
+			message: 'Enter the name of a command to create.',
+			default: () => this.options.name,
+			validate: validateCommandName,
 		});
 	}
 
@@ -27,7 +32,7 @@ class ApplicationGenerator extends PackageGenerator {
 		// Add the internal lib directory.
 		this.composeWith(require.resolve('../../internal/lib'));
 
-		// Add the bin directory.
+		// Add the bin directory with the first command.
 		this.composeWith(
 			require.resolve('../../internal/bin'),
 			pick(this.options, 'command'),
