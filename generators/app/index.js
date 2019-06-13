@@ -1,7 +1,7 @@
 const { Generator } = require('@batterii/yeoman-helpers');
 
 class ProjectGenerator extends Generator {
-	async promptForAnswers() {
+	async prompting() {
 		// Prompt the user for the project type.
 		this.answers = await this.prompt([ {
 			type: 'list',
@@ -11,7 +11,7 @@ class ProjectGenerator extends Generator {
 		} ]);
 	}
 
-	generateScaffold() {
+	generateProject() {
 		// Run the selected subgenerator.
 		this.composeWith(require.resolve(`../${this.answers.type}`));
 	}

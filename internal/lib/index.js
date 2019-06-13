@@ -1,6 +1,6 @@
 const { Generator } = require('@batterii/yeoman-helpers');
 
-class LibGenerator extends Generator {
+class LibDirectoryGenerator extends Generator {
 	constructor(args, opts) {
 		super(args, opts);
 
@@ -50,4 +50,4 @@ class LibGenerator extends Generator {
 	}
 }
 
-module.exports = LibGenerator;
+module.exports = LibDirectoryGenerator;

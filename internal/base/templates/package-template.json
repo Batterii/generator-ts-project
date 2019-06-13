@@ -9,7 +9,8 @@
 	"scripts": {
 		"lint": "eslint . --ext .ts",
 		"lintf": "eslint . --ext .ts --fix",
-		"build": "rm -rf dist && tsc",
+		"prebuild": "rm -rf dist",
+		"build": "tsc",
 		"preversion": "npm run lint",
 		"prepublishOnly": "git push && git push --tags"
 	}

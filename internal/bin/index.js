@@ -1,6 +1,6 @@
 const { Generator } = require('@batterii/yeoman-helpers');
 
-class BinGenerator extends Generator {
+class BinDirectoryGenerator extends Generator {
 	constructor(args, opts) {
 		super(args, opts);
 
@@ -10,7 +10,7 @@ class BinGenerator extends Generator {
 		});
 	}
 
-	addBin() {
+	addBinDirectory() {
 		const { command } = this.options;
 
 		// Include the bin directory for compilation.
@@ -35,4 +35,4 @@ class BinGenerator extends Generator {
 	}
 }
 
-module.exports = BinGenerator;
+module.exports = BinDirectoryGenerator;

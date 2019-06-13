@@ -1,6 +1,6 @@
 const { Generator } = require('@batterii/yeoman-helpers');
 
-class TestGenerator extends Generator {
+class TestSuiteGenerator extends Generator {
 	addTestSuite() {
 		// Copy mocha config files.
 		this.copyTemplate('mocharc.yaml', '.mocharc.yaml');
@@ -29,10 +29,8 @@ class TestGenerator extends Generator {
 			// Append a test:build run to the preversion script.
 			'preversion': 'npm run test:build',
 		});
-	}
 
-	installDependencies() {
-		// Install dev dependencies needed for test runs.
+		// Install dev dependencies for test runs.
 		this.npmInstall([
 			'@types/chai@4',
 			'@types/mocha@5',
@@ -47,4 +45,4 @@ class TestGenerator extends Generator {
 	}
 }
 
-module.exports = TestGenerator;
+module.exports = TestSuiteGenerator;

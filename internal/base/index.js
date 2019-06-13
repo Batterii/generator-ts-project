@@ -23,9 +23,7 @@ class BasePackageGenerator extends PackageGenerator {
 		this.copyTemplate('gitignore', '.gitignore');
 		this.copyTemplate('eslintignore', '.eslintignore');
 		this.copyTemplate('eslintrc.yaml', '.eslintrc.yaml');
-	}
 
-	installDependencies() {
 		// Install typescript. It must be saved exactly to prevent
 		// incompatibilities with typescript-eslint's parser.
 		this.npmInstall('typescript@3.4.5', {
