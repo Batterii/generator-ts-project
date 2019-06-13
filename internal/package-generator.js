@@ -1,5 +1,5 @@
+const { validatePackageDescription, validatePackageName } = require('./utils');
 const { Generator } = require('@batterii/yeoman-helpers');
-const { validatePackageName } = require('./utils');
 
 class PackageGenerator extends Generator {
 	constructor(args, opts) {
@@ -21,6 +21,7 @@ class PackageGenerator extends Generator {
 			alias: 'd',
 			description: 'Package description',
 			message: 'Enter the package description.',
+			validate: validatePackageDescription,
 		});
 	}
 }
