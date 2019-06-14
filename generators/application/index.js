@@ -17,7 +17,7 @@ class ApplicationGenerator extends PackageGenerator {
 		});
 	}
 
-	generateApplication() {
+	writing() {
 		// Generate the base package, with source-map-support dependency.
 		this.composeWith(
 			require.resolve('../../internal/base'),

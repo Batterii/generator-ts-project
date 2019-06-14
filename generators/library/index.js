@@ -1,7 +1,7 @@
 const PackageGenerator = require('../../internal/package-generator');
 
 class LibraryGenerator extends PackageGenerator {
-	generateLibrary() {
+	writing() {
 		// Generate the base package.
 		this.composeWith(require.resolve('../../internal/base'), this.options);
 

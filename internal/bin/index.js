@@ -10,7 +10,7 @@ class BinDirectoryGenerator extends Generator {
 		});
 	}
 
-	addBinDirectory() {
+	writing() {
 		// Get the command name from options.
 		const { command } = this.options;
 
@@ -36,7 +36,9 @@ class BinDirectoryGenerator extends Generator {
 			require.resolve('@batterii/generator-ts-command'),
 			{ name: command },
 		);
+	}
 
+	install() {
 		// Install the command generator locally.
 		this.npmInstall(
 			'@batterii/generator-ts-command@0',

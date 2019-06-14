@@ -11,7 +11,7 @@ class ProjectGenerator extends Generator {
 		} ]);
 	}
 
-	generateProject() {
+	writing() {
 		// Run the selected subgenerator.
 		this.composeWith(require.resolve(`../${this.answers.type}`));
 	}

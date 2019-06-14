@@ -11,7 +11,7 @@ class LibDirectoryGenerator extends Generator {
 		});
 	}
 
-	addLib() {
+	writing() {
 		const { isPublic } = this.options;
 
 		// Create the appropriate lib index file.
