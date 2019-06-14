@@ -7,6 +7,10 @@
 	"repository": "github:Batterii/<%= name %>",
 	"files": [],
 	"scripts": {
+		"generate": "yo",
+		"generate:class": "yo @batterii/ts-class",
+		"generate:module": "yo @batterii/ts-module",
+		"generate:test": "yo @batterii/ts-test",
 		"lint": "eslint . --ext .ts",
 		"lintf": "eslint . --ext .ts --fix",
 		"prebuild": "rm -rf dist",

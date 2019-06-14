@@ -11,6 +11,7 @@ class BinDirectoryGenerator extends Generator {
 	}
 
 	addBinDirectory() {
+		// Get the command name from options.
 		const { command } = this.options;
 
 		// Include the bin directory for compilation.
@@ -21,16 +22,25 @@ class BinDirectoryGenerator extends Generator {
 
 		this.addScripts({
 			// Make built bin files executable.
-			postbuild: 'chmod +x dist/bin/*.js',
+			'postbuild': 'chmod +x dist/bin/*.js',
+
+			// Add a script to generate more commands.
+			'generate:command': 'yo @batterii/ts-command',
 
 			// Add the main start script.
-			start: `npm run start:${command}`,
+			'start': `npm run start:${command}`,
 		});
 
 		// Run the command generator to create the first command.
 		this.composeWith(
 			require.resolve('@batterii/generator-ts-command'),
 			{ name: command },
+		);
+
+		// Install the command generator locally.
+		this.npmInstall(
+			'@batterii/generator-ts-command@0',
+			{ 'save-dev': true }
 		);
 	}
 }
