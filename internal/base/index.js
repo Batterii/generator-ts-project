@@ -1,13 +1,17 @@
-const PackageGenerator = require('../package-generator');
+const { Generator } = require('@batterii/yeoman-helpers');
 
-class BasePackageGenerator extends PackageGenerator {
+class BasePackageGenerator extends Generator {
 	constructor(args, opts) {
 		super(args, opts);
 
-		this.option('source-map-support', {
-			description: 'Set to install source-map-support as a dependency',
-			type: Boolean,
-			default: false,
+		this.option('name', {
+			type: String,
+			description: 'npm package name',
+		});
+
+		this.option('description', {
+			type: String,
+			description: 'npm package description',
 		});
 	}
 

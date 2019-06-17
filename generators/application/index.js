@@ -37,6 +37,9 @@ class ApplicationGenerator extends PackageGenerator {
 			require.resolve('../../internal/bin'),
 			pick(this.options, 'command'),
 		);
+
+		// Sort the package scripts.
+		this.composeWith(require.resolve('../../internal/sort-scripts'));
 	}
 }
 

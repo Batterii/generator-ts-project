@@ -13,6 +13,9 @@ class LibraryGenerator extends PackageGenerator {
 			require.resolve('../../internal/lib'),
 			{ isPublic: true },
 		);
+
+		// Sort the package scripts.
+		this.composeWith(require.resolve('../../internal/sort-scripts'));
 	}
 }
 
