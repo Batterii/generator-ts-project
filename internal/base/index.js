@@ -53,7 +53,7 @@ class BasePackageGenerator extends Generator {
 			'@typescript-eslint/eslint-plugin@1',
 			'@typescript-eslint/parser@1',
 			'eslint@5',
-			'yo@2',
+			'yo@3',
 		], { 'save-dev': true });
 	}
 }
