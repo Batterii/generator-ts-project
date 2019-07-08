@@ -25,7 +25,7 @@ class BinDirectoryGenerator extends Generator {
 			'postbuild': 'chmod +x dist/bin/*.js',
 
 			// Add a script to generate more commands.
-			'generate:command': 'yo --local-only @batterii/ts-command',
+			'generate:command': 'yo @batterii/ts-command --local-only',
 
 			// Add the main start script.
 			'start': `npm run start:${command}`,
