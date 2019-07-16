@@ -19,13 +19,13 @@
 		"prepublishOnly": "git push && git push --tags"
 	},
 	"dependencies": {
-		"@batterii/generator-ts-command": "0.0.5",
-		"@batterii/yeoman-helpers": "^0.2.0",
-		"@batterii/yeoman-validators": "0.0.1",
-		"lodash": "^4.17.11"
+		"@batterii/generator-ts-command": "^0.1.0",
+		"@batterii/yeoman-helpers": "^0.3.0",
+		"@batterii/yeoman-validators": "^0.1.0",
+		"lodash": "^4.17.14"
 	},
 	"devDependencies": {
-		"@batterii/eslint-config-node": "^1.0.6",
+		"@batterii/eslint-config-node": "^1.1.0",
 		"eslint": "^5.14.1"
 	}
 }
