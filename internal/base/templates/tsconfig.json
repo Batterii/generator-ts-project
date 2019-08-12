@@ -5,7 +5,8 @@
 		"target": "es2017",
 		"strictNullChecks": true,
 		"sourceMap": true,
-		"removeComments": true
+		"removeComments": true,
+		"esModuleInterop": true
 	},
 	"include": []
 }
