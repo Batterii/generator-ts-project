@@ -30,15 +30,19 @@ class BasePackageGenerator extends Generator {
 	}
 
 	install() {
-		// Install typescript. It must be saved exactly to prevent
-		// incompatibilities with typescript-eslint's parser.
+		/*
+		 * Install typescript. It must be saved exactly to prevent
+		 * incompatibilities with typescript-eslint's parser.
+		 */
 		this.npmInstall('typescript@3.4.5', {
 			'save-dev': true,
 			'save-exact': true,
 		});
 
-		// Install source-map-support as either a dependency or a dev
-		// dependency, depending on the source-map-support option.
+		/*
+		 * Install source-map-support as either a dependency or a dev
+		 * dependency, depending on the source-map-support option.
+		 */
 		this.npmInstall('source-map-support@0.5.12', {
 			[this.options['source-map-support'] ? 'save' : 'save-dev']: true,
 		});
