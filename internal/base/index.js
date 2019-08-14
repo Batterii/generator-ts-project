@@ -49,14 +49,14 @@ class BasePackageGenerator extends Generator {
 
 		// Install other dev dependencies.
 		this.npmInstall([
-			'@batterii/eslint-config-ts@1',
+			'@batterii/eslint-config-ts@2',
 			'@batterii/generator-ts-class@0',
 			'@batterii/generator-ts-module@0',
 			'@batterii/generator-ts-test@0',
 			'@types/node@10',
-			'@typescript-eslint/eslint-plugin@1',
-			'@typescript-eslint/parser@1',
-			'eslint@5',
+			'@typescript-eslint/eslint-plugin@2',
+			'@typescript-eslint/parser@2',
+			'eslint@6',
 			'yo@3',
 		], { 'save-dev': true });
 	}

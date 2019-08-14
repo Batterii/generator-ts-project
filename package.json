@@ -25,7 +25,7 @@
 		"lodash": "^4.17.15"
 	},
 	"devDependencies": {
-		"@batterii/eslint-config-node": "^1.1.2",
-		"eslint": "^5.14.1"
+		"@batterii/eslint-config-node": "^2.0.2",
+		"eslint": "^6.1.0"
 	}
 }
