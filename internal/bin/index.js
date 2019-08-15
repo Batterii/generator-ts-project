@@ -41,7 +41,7 @@ class BinDirectoryGenerator extends Generator {
 	install() {
 		// Install the command generator locally.
 		this.npmInstall(
-			'@batterii/generator-ts-command@0',
+			'@batterii/generator-ts-command@0.1',
 			{ 'save-dev': true },
 		);
 	}

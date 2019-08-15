@@ -43,16 +43,16 @@ class BasePackageGenerator extends Generator {
 		 * Install source-map-support as either a dependency or a dev
 		 * dependency, depending on the source-map-support option.
 		 */
-		this.npmInstall('source-map-support@0.5.12', {
+		this.npmInstall('source-map-support@0.5', {
 			[this.options['source-map-support'] ? 'save' : 'save-dev']: true,
 		});
 
 		// Install other dev dependencies.
 		this.npmInstall([
 			'@batterii/eslint-config-ts@2',
-			'@batterii/generator-ts-class@0',
-			'@batterii/generator-ts-module@0',
-			'@batterii/generator-ts-test@0',
+			'@batterii/generator-ts-class@0.2',
+			'@batterii/generator-ts-module@0.2',
+			'@batterii/generator-ts-test@0.1',
 			'@types/node@10',
 			'@typescript-eslint/eslint-plugin@2',
 			'@typescript-eslint/parser@2',
