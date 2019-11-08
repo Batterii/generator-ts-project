@@ -11,8 +11,8 @@ class BinDirectoryGenerator extends Generator {
 	}
 
 	writing() {
-		// Get the command name from options.
-		const { command } = this.options;
+		// Copy the bin-specific eslint config to the bin directory.
+		this.copyTemplate('eslintrc.yaml', 'bin/.eslintrc.yaml');
 
 		// Include the bin directory for compilation.
 		this.extendTsConfig({ include: [ 'bin/**/*' ] });
@@ -20,6 +20,10 @@ class BinDirectoryGenerator extends Generator {
 		// Add built bin directory to publishing whitelist.
 		this.extendPackage({ files: [ 'dist/bin' ] });
 
+		// Get the command name from options.
+		const { command } = this.options;
+
+		// Update scripts for managing the bin directory.
 		this.addScripts({
 			// Make built bin files executable.
 			'postbuild': 'chmod +x dist/bin/*.js',
