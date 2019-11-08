@@ -1,2 +1,2 @@
-# <%= name %>
+# @batterii/<%= name %>
 <%= description %>
