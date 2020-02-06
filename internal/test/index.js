@@ -35,11 +35,12 @@ class TestSuiteGenerator extends Generator {
 		// Install dev dependencies for test runs.
 		this.npmInstall([
 			'@types/chai@4',
-			'@types/mocha@5',
+			'@types/mocha@7',
 			'@types/sinon@7',
 			'@types/sinon-chai@3',
 			'chai@4',
-			'mocha@6',
+			'mocha@7',
+			// Keep sinon at 7 for now, as types haven't been released for 8.
 			'sinon@7',
 			'sinon-chai@3',
 			'ts-node@8',

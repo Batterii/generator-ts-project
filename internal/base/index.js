@@ -34,7 +34,7 @@ class BasePackageGenerator extends Generator {
 		 * Install typescript. It must be saved exactly to prevent
 		 * incompatibilities with typescript-eslint's parser.
 		 */
-		this.npmInstall('typescript@3.5.3', {
+		this.npmInstall('typescript@3.7.5', {
 			'save-dev': true,
 			'save-exact': true,
 		});
