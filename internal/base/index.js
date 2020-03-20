@@ -53,7 +53,7 @@ class BasePackageGenerator extends Generator {
 			'@batterii/generator-ts-class@0.2',
 			'@batterii/generator-ts-module@0.2',
 			'@batterii/generator-ts-test@0.1',
-			'@types/node@10',
+			'@types/node@12',
 			'@typescript-eslint/eslint-plugin@2',
 			'@typescript-eslint/parser@2',
 			'eslint@6',
