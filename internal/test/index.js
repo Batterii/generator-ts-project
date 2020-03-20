@@ -2,9 +2,8 @@ const { Generator } = require('@batterii/yeoman-helpers');
 
 class TestSuiteGenerator extends Generator {
 	writing() {
-		// Copy mocha config files.
+		// Copy mocha config file.
 		this.copyTemplate('mocharc.yaml', '.mocharc.yaml');
-		this.copyTemplate('mocharc-dist.yaml', '.mocharc-dist.yaml');
 
 		// Copy test-specific eslint config to the test directory.
 		this.copyTemplate('eslintrc.yaml', 'test/.eslintrc.yaml');
@@ -17,17 +16,13 @@ class TestSuiteGenerator extends Generator {
 
 		// Add test run scripts.
 		this.addScripts({
-			// Scripts for running tests with ts-node.
-			'test': 'mocha',
-			'test:unit': 'mocha test/unit',
-			'test:integration': 'mocha test/integration',
+			// Scripts for running tests. These will all build before the run.
+			'test': 'npm run build && mocha dist/test',
+			'test:unit': 'npm run build && mocha dist/test/unit',
+			'test:integration': 'npm run build && mocha dist/test/integration',
 
-			// Script to build and run tests on the output.
-			'test:build': 'npm run build && ' +
-				'mocha --config .mocharc-dist.yaml dist/test',
-
-			// Append a test:build run to the preversion script.
-			'preversion': 'npm run test:build',
+			// Append a clean build and test run to the preversion script.
+			'preversion': 'npm run clean && npm run test',
 		});
 	}
 
@@ -43,7 +38,6 @@ class TestSuiteGenerator extends Generator {
 			// Keep sinon at 7 for now, as types haven't been released for 8.
 			'sinon@7',
 			'sinon-chai@3',
-			'ts-node@8',
 		], { 'save-dev': true });
 	}
 }

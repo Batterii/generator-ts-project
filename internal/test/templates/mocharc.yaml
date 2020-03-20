@@ -1,9 +1,8 @@
 exclude:
-  - test/*.*
-  - test/lib/**
-extension: ts
+  - dist/test/*.*
+  - dist/test/lib/**
 file:
-  - ./test/setup.ts
+  - dist/test/setup.js
 recursive: true
 require:
-  - ts-node/register
+  - source-map-support/register

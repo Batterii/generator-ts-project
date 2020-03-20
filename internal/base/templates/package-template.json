@@ -13,8 +13,8 @@
 		"generate:test": "yo @batterii/ts-test --local-only ",
 		"lint": "eslint . --ext .ts",
 		"lintf": "eslint . --ext .ts --fix",
-		"prebuild": "rm -rf dist",
 		"build": "tsc",
+		"clean": "rm -rf dist",
 		"preversion": "npm run lint",
 		"prepublishOnly": "git push && git push --tags"
 	}
