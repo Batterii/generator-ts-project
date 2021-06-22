@@ -1,6 +1,6 @@
 {
 	"name": "@batterii/generator-ts-project",
-	"version": "0.3.5",
+	"version": "0.4.0",
 	"description": "Batterii TypeScript project generator",
 	"keywords": [
 		"yeoman-generator"
