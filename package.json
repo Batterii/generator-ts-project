@@ -19,9 +19,9 @@
 		"prepublishOnly": "git push && git push --tags"
 	},
 	"dependencies": {
-		"@batterii/generator-ts-command": "^0.1.1",
-		"@batterii/yeoman-helpers": "^0.3.1",
-		"@batterii/yeoman-validators": "^0.1.0",
+		"@batterii/generator-ts-command": "^0.4.0",
+		"@batterii/yeoman-helpers": "^0.4.0",
+		"@batterii/yeoman-validators": "^0.2.0",
 		"lodash": "^4.17.15"
 	},
 	"devDependencies": {
